@@ -37,14 +37,19 @@ describe(safe) :-
 describe(door) :-
 	write('You are by what looks to be the exit of the room. On occassion, \
 voices can be heard on the other side.\n\nThe door is locked, but the correct \
-4-digit passcode can unlock it. \nYou can try passcodes by typing \
-"enter_code(1,2,3,4)."'), !.
+4-digit passcode can unlock it. \nYou can try passcodes by typing something like \
+"enter_code(_,_,_,_)."\n\nThere is also something interesting carved into the \
+'), bold('trim'), write(' beside the door'), !.
 describe(corner) :-
 	write('You are in the corner of the room. There\'s a plant in the \
 corner, and something in the '), bold('pot'), write(' is gleaming.').
 describe(plant) :- describe(pot).
 describe(pot) :-
 	write('You kneel to look into the pot.\n\n'), !.
+describe(wardrobe) :-
+	write('An old wooden wardrobe. It\'s empty\n\n').
+describe(trim) :-
+  write('There\'s a "5" carved into the wall here...What does that mean?').
 describe(_) :-
 	write('I don\'t know where you are.\n\n'), !.
 
@@ -87,11 +92,19 @@ path(desk, safe).
 %the corner of the room, it contains a potted plant
 path(_, corner).
 
+%you can go back into the center of the room from everywhere
+path(_, center).
+
 %the pot of the plant. it contains a key for the safe
 path(corner, pot).
 
 %the door to exit the room. its locked, but can be unlocked with a keycode
 path(_, door).
+
+path(door, trim).
+
+%the wardrobe where the note lies
+path(_, wardrobe).
 
 %the door and the safe are locked at first
 door(locked).
@@ -116,6 +129,8 @@ at(safe, diary, 'in the safe under', 'desk', 'The leather cover is torn, it look
 %the key in the pot of the plant in the corner
 at(pot, key, 'in', 'pot', 'It looks useful\n').
 
+at(wardrobe, note, 'on the ground by', 'desk', 'It\'s hand-written').
+
 examine(key) :-
 	holding(key),
   write('It\'s just a rusty old key. I wonder where it goes...\n'), !.
@@ -128,6 +143,10 @@ examine(diary) :-
 	entry2,
   write('\n\n\n\nThe rest of the pages are blank...\n'), !.
 
+examine(note) :-
+  holding(note),
+  write('It says: \n\n   "8"\n\n\nI wonder what that means?'), !.
+
 examine(_) :- write('You have to be holding an item to examine it.\n'), !.
 
 entry1 :- write('   December 20th, 1943\n\nI woke up in this awful room...I \
@@ -136,7 +155,7 @@ last thing I ever write.\n\n  -Jack').
 
 entry2 :- write('   December 22nd, 1943\n\nThere are footsteps outside sometimes, I can hear people \
 talking. The door is locked, but I think I overheard one of the men saying that the first \
-two digits to the passcode were "5 and 8". I\'ve tried hundreds of digits for \
+two digits to the passcode were "5 and 3". I\'ve tried hundreds of digits for \
 the last two but I just can\'t figure it out...I may die in here. I just want \
 to hold my children one more time...\n\n  -Jack').
 

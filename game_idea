@@ -46,8 +46,9 @@ Rooms: There are several "areas" in the room. They are:
 -pot
 -desk
 -safe
+-trim
 
-There are only 8, but if I have time I'll try to add 2 more so I meet the requirements.
+There are only 9, but if I have time I'll try to add another so I meet the requirements.
 
 Objects: There are several objects:
 -key
@@ -56,3 +57,23 @@ Objects: There are several objects:
 -note
 
 There are only 4, but I'll try to add another one if I find time.
+
+
+The solution to the game:
+go_to(corner).
+go_to(pot).
+pick_up(key). %you need this for the safe
+go_to(desk).
+go_to(safe).
+open.
+pick_up(diary).
+examine(diary). %you can see the first two digits of the code; "5" and "3"
+go_to(wardrobe).
+pick_up(note).
+examine(note). %tells you the number "8"
+go_to(door).
+go_to(trim). %tells you the number "5"
+enter_code(5,3,8,5).
+open.
+%let your mind be blown by the twist at the end
+%(ignore the plot holes)

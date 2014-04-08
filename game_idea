@@ -1,0 +1,58 @@
+you start in a room, the goal is to escape
+
+   -------------------
+   |1                |
+   |                \*
+   |                 |
+   |     center      |
+   |                 /
+   |                /
+   |               /
+   |3       2     /
+   ---------------
+   * the door to exit
+
+   1. Plant, there's a key in the pot for the safe
+   2. A desk. On the desk there's a:
+      -pen. it doesn't write.
+      Under the desk there is a:
+      -safe. the key from the plant opens the safe, which in
+      turn contains a diary
+      -diary. the diary is written in the perspective of
+       a person named "Jack" who woke up in the room. He
+       never escaped, but there's no body in the room.
+   3. A wardrobe. It contains a small note, which reads "8".
+   *  There is a small "5" scratched above the door
+
+
+Instructions: are shown at the beginning of the game and optionally with "instructions."
+
+Room Reporting: in my implementation it's "area reporting", but it works the same way. It doesn't
+go through the possible exits and list them, but it does implicitly do that in the description
+of the area. I did this purposely, for style.
+
+Conditional Movement: It's present in the game. Most notably you can't get to the pot
+unless you're in the corner and you can't get to the safe unless you're by the desk.
+
+Limited Resources: A good example of this is the "key", which is found only once,
+destroyed when the safe is opened, and never able to be found again.
+
+Rooms: There are several "areas" in the room. They are:
+-door
+-safe
+-center
+-wardrobe
+-corner
+-pot
+-desk
+-safe
+
+There are only 8, but if I have time I'll try to add 2 more so I meet the requirements.
+
+Objects: There are several objects:
+-key
+-pen
+-diary
+-note
+
+There are only 4, but I'll try to add another one if I find time.

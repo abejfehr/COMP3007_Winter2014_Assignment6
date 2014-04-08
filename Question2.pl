@@ -16,7 +16,7 @@ city-in(bonn, germany).
 city-in(hamberg, germany).
 city-in(belgrade, yugoslavia).
 city-in(zagreb, yugoslavia).
-city-in(bern switzerland).
+city-in(bern, switzerland).
 city-in(zurich, switzerland).
 city-in(london, united_kingdom).
 city-in(edinburgh, united_kingdom).
@@ -28,3 +28,8 @@ belongs-to(united_kingdom, 'EC').
 capital_of(City, Country) :- capital(City), city-in(City, Country).
 
 capital_of(Community, Capitals) :-
+  findall(City, city_community(City,Community), Capitals).
+
+%City_community: a helper function for the second clause of Question 2
+city_community(City, Community) :-
+  capital(City), city-in(City, Country), belongs-to(Country, Community).

@@ -1,0 +1,177 @@
+76 ?- ['Question3.pl'].
+% Question3.pl compiled 0.00 sec, 2 clauses
+true.
+
+77 ?- start.
+You wake up with a headache in the center of a large, unfamiliar room. You must escape. You stand up, dazed and confused.
+
+Instructions:
+-Type "look."to look around where you are. It will tell you where you are, what's around you, and what you can pick up where you are.
+-Type "go_to(place)." to move somewhere in the room.
+-Type "pick_up(item)."to pick up an item.
+-Type "held_items." list all the items you're currently holding.
+-Type "examine(item)." to look at an item that you're currently holding.
+
+You can type"instructions." again at any time to see these again.
+Good luck.
+You are in the center of the room.
+
+There is a plant in the corner of the room, a desk against the wall, a wardrobe off to the side and the door to exit is behind you.
+
+true.
+
+78 ?- go_to(corner).
+
+You are in the corner of the room. There's a plant in the corner, and something in the pot is gleaming.
+true.
+
+79 ?- go_to(pot).
+
+You kneel to look into the pot.
+
+There is a key in the pot. It looks useful
+
+true.
+
+80 ?- pick_up(key).
+You have picked up the key.
+true.
+
+81 ?- examine(key).
+It's just a rusty old key. I wonder where it goes...
+true.
+
+82 ?- go_to(wardrobe).
+
+An old wooden wardrobe. It's empty
+
+There is a note on the ground by the desk. It's hand-written
+true.
+
+83 ?- pick_up(note).
+You have picked up the note.
+true.
+
+84 ?- examine(note).
+It says:
+
+   "8"
+
+
+I wonder what that means?
+true.
+
+85 ?- go_to(desk).
+
+You are by the desk.
+
+There is a safe under it.
+There is a pen on the desk. It doesn't write.
+
+true.
+
+86 ?- pick_up(pen).
+You have picked up the pen.
+true.
+
+87 ?- go_to(safe).
+
+You kneel to look at the safe.
+
+You could try to "open." it.
+
+
+true.
+
+88 ?- open.
+Your key fits! You crack open the safe to reveal it's contents. There's a diary inside.
+true.
+
+89 ?- pick_up(diary).
+You have picked up the diary.
+true.
+
+90 ?- items_held.
+Correct to: "held_items"?
+Please answer 'y' or 'n'? yes
+note
+true .
+
+ 91 ?- held_items.
+note
+true
+pen
+true
+diary
+true.
+
+ 92 ?- examine(diary).
+You open the diary to read several of it's old pages.
+
+   December 20th, 1943
+
+I woke up in this awful room...I haven't eaten anything in days.
+I'm writing this in fear that this is the last thing I ever write.
+
+  -Jack
+
+   December 22nd, 1943
+
+There are footsteps outside sometimes, I can hear people talking. The door is locked, but I think I overheard one of the men saying that the first two digits to the passcode were "5 and 3". I've tried hundreds of digits for the last two but I just can't figure it out...I may die in here. I just want to hold my children one more time...
+
+  -Jack
+
+
+
+The rest of the pages are blank...
+true.
+
+93 ?- go_to(door).
+
+You are by what looks to be the exit of the room. On occassion, voices can be heard on the other side.
+
+The door is locked, but the correct 4-digit passcode can unlock it.
+You can try passcodes by typing something like "enter_code(_,_,_,_)."
+
+There is also something interesting carved into the trim beside the door
+true.
+
+ 94 ?- go_to(trim).
+
+There's a "5" carved into the wall here...What does that mean?
+true.
+
+95 ?- go_to(door).
+
+You are by what looks to be the exit of the room. On occassion, voices can be heard on the other side.
+
+The door is locked, but the correct 4-digit passcode can unlock it.
+You can try passcodes by typing something like "enter_code(_,_,_,_)."
+
+There is also something interesting carved into the trim beside the door
+true.
+
+ 96 ?- enter_code(5,8,3,5).
+That passcode didn't work...
+true.
+
+97 ?- enter_code(5,3,8,5).
+That was the correct passcode! The door is now unlocked. Type "open." to finally escape!
+true
+Unknown action: o (h for help)
+Action? [print]
+true
+Unknown action: e (h for help)
+Action?
+That passcode didn't work...
+true.
+
+98 ?- open.
+Beads of sweat roll down your face. You turn the handle until the door clicks and begin to slowly push it open...
+
+...you walk into a room as the door closes and locks behind you. You find yourself in another room which is an exact mirror of the one you just escaped from.
+
+You laugh hysterically and settle into the chair by the desk, and you begin to add a chapter to an empty diary, which you sign as "Jack".
+
+The End.
+true.

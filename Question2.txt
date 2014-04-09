@@ -1,0 +1,29 @@
+70 ?- ['Question2.pl'].
+% Question2.pl compiled 0.00 sec, 1 clauses
+true.
+
+71 ?- capital_of(X, germany).
+X = bonn
+false.
+
+72 ?- capital_of(X, Y).
+X = bern,
+Y = switzerland
+X = london,
+Y = united_kingdom
+X = prague,
+Y = czechoslovakia
+X = bonn,
+Y = germany
+X = belgrade,
+Y = yugoslavia
+Y = [bern, london, prague, bonn].
+
+73 ?- capital_of('EC', X).
+X = [london, bonn].
+
+74 ?- capital_of('EFTA', X).
+X = [bern].
+
+75 ?- capital_of('ABC', X).
+X = [].

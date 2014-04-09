@@ -1,0 +1,44 @@
+%I reconsult the file numerous times to fix a mistake in the power rule.
+
+57 ?- ['Question1.pl'].
+% Question1.pl compiled 0.00 sec, 1 clauses
+true.
+
+58 ?- occurrences_of(3, [3,4,3,5,6,3], X).
+X = 3
+false.
+
+59 ?- flatten_list([a,b,c,d,e], X).
+true.
+
+60 ?- power(2,3,X).
+ERROR: is/2: Arguments are not sufficiently instantiated
+61 ?- ['Question1.pl'].
+% Question1.pl compiled 0.00 sec, 1 clauses
+true.
+
+62 ?- power(2,3,X).
+ERROR: is/2: Arguments are not sufficiently instantiated
+63 ?- ['Question1.pl'].
+ERROR: /Users/abe/Dropbox/University/Assignments/COMP3007/assignment6/Question1.pl:31: Syntax error: Unexpected end of file
+% Question1.pl compiled 0.00 sec, 0 clauses
+true.
+
+64 ?- ['Question1.pl'].
+% Question1.pl compiled 0.00 sec, 2 clauses
+true.
+
+65 ?- power(2,3,X).
+ERROR: is/2: Arguments are not sufficiently instantiated
+66 ?- ['Question1.pl'].
+% Question1.pl compiled 0.00 sec, 1 clauses
+true.
+
+67 ?- power(2,3,X).
+ERROR: is/2: Arguments are not sufficiently instantiated
+68 ?- ['Question1.pl'].
+% Question1.pl compiled 0.00 sec, 1 clauses
+true.
+
+69 ?- power(2,3,X).
+X = 8 .

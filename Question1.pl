@@ -26,6 +26,6 @@ flatten_list([W|X],Y) :-
 % "base" and "exponent" so I wouldn't get confused.
 power(_, 0, 1). %the "base" case
 power(Base, Exponent, Power) :-
-  NewExponent is Exponent - 1, %decrement the exponent
-  NewPower    is Power * Base, %multiply the power
-  power(Base, NewExponent, NewPower). %call it again
+  X is Exponent-1, %decrement the exponent
+  power(Base, X, Y), %call it again
+  Power is Y*Base. %multiply the power
